@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>经营分析</title>
+    <!-- 灵犀v4.0通道配置 -->
+    <meta name="lx:category" content="waimai_e">
+    <link rel="dns-prefetch" href="//analytics.meituan.net"/>
+
+    <!-- CAT SDK（OWL）上报模块接入 -->
+    <script>
+      "use strict";!function(){var i=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"_Owl_",t=window;t[i]||(t[i]={isRunning:!1,isReady:!1,preTasks:[],dataSet:[],use:function(i,n){this.isReady&&t.Owl&&t.Owl[i](n),this.preTasks.push({api:i,data:[n]})},add:function(i){this.dataSet.push(i)},run:function(){var i=this;if(!this.isRunning){this.isRunning=!0;var n=t.onerror;t.onerror=function(){this.isReady||this.add({type:"jsError",data:arguments}),n&&n.apply(t,arguments)}.bind(this),(t.addEventListener||t.attachEvent)("error",function(t){i.isReady||i.add({type:"resError",data:[t]})},!0)}}},t[i].run())}();
+    </script>
+    <!-- 线上压缩版 -->
+    <script crossorigin="anonymous" src="//www.dpfile.com/app/owl/static/owl_1.6.3.js"></script>
+    <!-- 线下测试版 -->
+    <!--<script crossorigin="anonymous" src="//s1.51ping.com/app/owl/static/owl_1.6.3.js"></script>-->
+    <script>
+      Owl.start({
+        project: 'waimai_e_data_fe',
+        pageUrl: window.location.origin + window.location.pathname + window.location.hash
+      })
+    </script>
+    <!-- CAT SDK（OWL）上报模块接入 end -->
+
+    <!-- 灵犀v4.0通道配置 -->
+    <link href="//xs01.meituan.net/kuib/1.9.5/css/@waimai/kangarooui-waimaib.min.css" rel="stylesheet" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">-->
+    <!-- 接入灵犀v4.0 start-->
+    <script type="text/javascript">
+      !(function (win, doc, ns) {
+          var cacheFunName = '_MeiTuanALogObject';
+          win[cacheFunName] = ns;
+          if (!win[ns]) {
+              var _LX = function () {
+                  _LX.q.push(arguments);
+                  return _LX;
+              };
+              _LX.q = _LX.q || [];
+              _LX.l = +new Date();
+              win[ns] = _LX;
+          }
+      })(window, document, 'LXAnalytics');
+      LXAnalytics('set', 'appnm', 'waimai_e_bizdata');
+      // 设置环境信息
+      function getCookie(cname) {
+          var name = cname + "=";
+          var ca = document.cookie.split(';');
+          for (var i = 0; i < ca.length; i++) {
+              var c = ca[i].trim();
+              if (c.indexOf(name) == 0) return decodeURIComponent(c.substring(name.length, c.length));
+          }
+          return "";
+      }
+      LXAnalytics('set', 'ct', 'www');
+      LXAnalytics('set', 'uid', getCookie('acctId'));
+      LXAnalytics('set', 'lch', getCookie('wmPoiId'));
+    </script>
+    <!-- 接入灵犀v4.0 end-->
+    <style>
+      .app {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .nav-cards {
+        border-bottom: 0 !important;
+        height: 39px;
+      }
+      .nav-horizontal {
+        border-bottom: 0 !important;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="app"><div id="app"></div></div>
+    <script src="//analytics.meituan.net/analytics.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script type="text/javascript" src="//xs01.meituan.net/cdn/highcharts/4.2.1/highcharts.js"></script>
+    <script type="text/javascript" src="//xs01.meituan.net/wmcdn/vue/2.2.6/vue.min.js"></script>
+    <script type="text/javascript" src="//xs01.meituan.net/wmcdn/vue-router/2.7.0/vue-router.min.js"></script>
+    <script type="text/javascript" src="//xs01.meituan.net/wmcdn/vue-resource/1.3.4/vue-resource.min.js"></script>
+    <script type="text/javascript" src="//xs01.meituan.net/wmcdn/kangarooui-vue/2.13.1/js/kangarooui-vue.js"></script>
+<script type="text/javascript" src="//xs01.meituan.net/bizdata/dist/manifest.1ba37.js"></script><script type="text/javascript" src="//xs01.meituan.net/bizdata/dist/app.24fe5.js"></script></body>
+
+</html>
